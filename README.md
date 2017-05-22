@@ -1,4 +1,4 @@
-# Show The Local Weather
+# Local Weather
 
 This is my submission for the "Show The Local Weather" project on www.freecodecamp.com.
 
