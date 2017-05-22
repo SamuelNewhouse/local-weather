@@ -1,0 +1,47 @@
+body {
+  background: gray;
+  text-align: center;
+}
+div {
+  align-content: center;
+  align-items: center;
+  margin: auto;
+}
+.header {
+  margin: 20px auto;
+  font-style: italic;
+}
+.extraBox {
+  margin: 50px auto;
+  max-width: 650px;
+  padding: 10px 0px;
+  background: #98998b;
+  border-radius: 7px;
+}
+.footer {
+  margin: 50px auto;
+  font-style: italic;
+}
+.mainbox {
+  margin: 25px auto;
+  max-width: 600px;
+  background: #9fabb5;
+  color: #000000;
+  border-radius: 7px;
+}
+.unitH1 {
+  margin: auto;
+  padding: 0px 8px;
+  background: #bacae2;
+  border-radius: 5px;
+  border-style: inset;
+  border-color: #683e3e;
+}
+.unitH1:hover {
+  font-weight: bolder;
+  cursor: pointer;
+}
+.wDesc {
+  font-size: 200%;
+  font-style: italic;
+}
