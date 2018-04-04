@@ -1,0 +1,24 @@
+html {
+  font-size: 1.2rem;
+}
+
+header, section, footer {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+section {
+  line-height: 2em;
+}
+
+p, div {
+  margin: 0;
+  padding: 0;
+}
+
+section > div {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

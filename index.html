@@ -9,26 +9,52 @@
 	<meta name="description" content="This is my submission for the 'Show the Local Weather' project on www.freecodecamp.com.">
 	<meta name="author" content="Samuel Newhouse">
 	<title>Local Weather Viewer</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css" integrity="sha256-pz64SJ9vnWkyhtOo7mtiOekWuFo7YIGXrzXjElYzcWA=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css"
+	 integrity="sha256-pz64SJ9vnWkyhtOo7mtiOekWuFo7YIGXrzXjElYzcWA=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 
 <body>
 	<header>
+		<h1>Local Weather Viewer</h1>
 	</header>
 
-	<nav>		
-	</nav>
-
 	<section>
+		<div id="temperature">
+			<p>-</p>
+		</div>
+		<div id="wind">
+			<p>-</p>
+		</div>
 	</section>
 
-	<footer>Made by
-		<a href="https://github.com/SamuelNewhouse" target="_blank">Samuel Newhouse</a>
+	<section>
+		<div class="weather-icon">
+			<p>-</p>
+		</div>
+		<div id="description">
+			<p>-</p>
+		</div>
+		<div class="weather-icon">
+			<p>-</p>
+		</div>
+	</section>
+
+	<section>
+		<div id="location">
+			<p>-</p>
+		</div>
+	</section>
+
+	<footer>
+		<p>Made by
+			<a href="https://github.com/SamuelNewhouse" target="_blank">Samuel Newhouse</a>
+		</p>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-	<script src="scripts/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous" defer></script>
+	<script src="scripts/script.js" defer></script>
 </body>
 
 </html>
