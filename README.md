@@ -1,5 +1,5 @@
-# ???
+# Local Weather Viewer
 
-This is my submission for the "Build a ???" project on www.freecodecamp.com.
+This is my submission for the "Show the Local Weather" project on www.freecodecamp.com.
 
-View here: https://samuelnewhouse.github.io/simon-game/
+View here: https://samuelnewhouse.github.io/local-weather/
