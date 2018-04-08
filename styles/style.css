@@ -1,15 +1,39 @@
 html {
-  font-size: 1.2rem;
+  font-size: 1.7rem;  
+}
+
+body {
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 1.3em;
 }
 
 header, section, footer {
-  margin: auto;
+  margin: 0 auto;
   max-width: 600px;
   text-align: center;
 }
 
-section {
-  line-height: 2em;
+header {  
+  max-width: 100%;  
+  background: #000;
+  color: #fff;
+}
+
+header, footer {
+  padding: 32px 0;
+}
+
+section, footer {
+  height: 2.5em;
+  line-height: 2.5em;
+}
+
+footer {  
+  margin-top: 1em;
+  font-size: 0.5em;
 }
 
 p, div {
@@ -21,4 +45,71 @@ section > div {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
+}
+
+section:nth-of-type(1), section:nth-of-type(2) {
+  margin-top: 1.75em;  
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+input {  
+  display: none; 
+}
+
+input:checked + label {
+  background: #aaccaa;   
+}
+
+label {
+  margin: 5px 0;
+  padding: 0;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  padding: 3px;
+  border: 1px solid transparent;
+}
+
+label:hover {
+  border: 1px solid black;
+}
+
+.data {
+  display: none;  
+}
+
+.dropdown {
+  color: #14149c;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;  
+}
+
+.dropdown-content {
+  text-align: left;
+  display: none;
+  position: absolute;
+  left: -15px;
+  z-index: 1;
+  background: #fff;  
+  white-space: nowrap;
+  border: 1px solid #777;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000;
+  padding: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#temperature {
+  margin-right: 10px;
+}
+
+#wind {
+  margin-left: 10px;
 }

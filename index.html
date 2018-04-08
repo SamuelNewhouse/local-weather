@@ -19,16 +19,60 @@
 		<h1>Local Weather Viewer</h1>
 	</header>
 
-	<section>
-		<div id="temperature">
-			<p>-</p>
+	<section class="message">
+		<div>
+			<p>Finding your location...</p>
 		</div>
-		<div id="wind">
+	</section>
+
+	<section class="data">
+		<div id="location">
 			<p>-</p>
 		</div>
 	</section>
 
-	<section>
+	<section class="data">
+
+		<div id="temperature">
+			<span id="temperature-number">-</span>
+			<div class="dropdown">
+				<span class="pointer" id="temperature-unit">-</span>
+
+				<div class="dropdown-content">
+					<input type="radio" checked="checked" name="temperature-unit" value="Celsius" id="radio-celsius">
+					<label for="radio-celsius">Celsius</label>
+
+					<input type="radio" name="temperature-unit" value="Fahrenheit" id="radio-fahrenheit">
+					<label for="radio-fahrenheit">Fahrenheit</label>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="wind">
+			<span id="wind-number">-</span>
+
+			<div class="dropdown">
+				<span class="pointer" id="wind-unit">-</span>
+
+				<div class="dropdown-content">
+					<input type="radio" checked="checked" name="wind-unit" value="knots" id="radio-knots">
+					<label for="radio-knots">knots</label>
+
+					<input type="radio" name="wind-unit" value="kph" id="radio-kph">
+					<label for="radio-kph">kph</label>
+
+					<input type="radio" name="wind-unit" value="mph" id="radio-mph">
+					<label for="radio-mph">mph</label>
+				</div>
+			</div>
+
+			<span id="wind-direction">-</span>
+		</div>
+
+	</section>
+
+	<section class="data">
 		<div class="weather-icon">
 			<p>-</p>
 		</div>
@@ -36,12 +80,6 @@
 			<p>-</p>
 		</div>
 		<div class="weather-icon">
-			<p>-</p>
-		</div>
-	</section>
-
-	<section>
-		<div id="location">
 			<p>-</p>
 		</div>
 	</section>
