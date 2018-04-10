@@ -1,32 +1,94 @@
-<!DOCTYPE html>
-<html>
+<!-- Doctype HTML5 -->
+<!doctype html>
+<html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/style.css" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="scripts/script.js"></script>
-  <title>Local Weather</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="This is my submission for the 'Show the Local Weather' project on www.freecodecamp.com.">
+	<meta name="author" content="Samuel Newhouse">
+	<title>Local Weather Viewer</title>
+	<link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 
 <body>
-  <div class="extraBox">
-    <div class="header">
-      <h3>Your Local Weather</h3>
-    </div>
-    <div class="mainbox">
-      <br>
-      <h1>Location: <span class="locH1">?</span></h1>
-      <br>
-      <h1>Temperature: <span class="tempH1"></span> <span class="unitH1">?</span></h1>
-      <br>
-      <span class="wIcon"></span><span class="wDesc"></span><span class="wIcon"></span>
-    </div>
-  </div>
-  <div class="footer">
-    <p>Made by <a href="https://codepen.io/SamuelNewhouse" target="_blank">Samuel Newhouse</a></p>
-  </div>
+	<header>
+		<h1>Local Weather Viewer</h1>
+	</header>
+
+	<section class="message">
+		<div>
+			<p id="message">Finding your location...</p>
+		</div>
+	</section>
+
+	<section class="data">
+		<span id="location">-</span>
+	</section>
+
+	<section class="data">
+
+		<div id="temperature">
+			<span id="temperature-number">-</span>
+			<div class="dropdown">
+				<span class="pointer" id="temperature-unit">-</span>
+
+				<div class="dropdown-content">
+					<input type="radio" checked="checked" name="temperature-unit" value="Celsius" id="radio-celsius">
+					<label for="radio-celsius">Celsius</label>
+
+					<input type="radio" name="temperature-unit" value="Fahrenheit" id="radio-fahrenheit">
+					<label for="radio-fahrenheit">Fahrenheit</label>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="wind">
+			<span id="wind-number">-</span>
+
+			<div class="dropdown">
+				<span class="pointer" id="wind-unit">-</span>
+
+				<div class="dropdown-content">
+					<input type="radio" checked="checked" name="wind-unit" value="knots" id="radio-knots">
+					<label for="radio-knots">knots</label>
+
+					<input type="radio" name="wind-unit" value="kph" id="radio-kph">
+					<label for="radio-kph">kph</label>
+
+					<input type="radio" name="wind-unit" value="mph" id="radio-mph">
+					<label for="radio-mph">mph</label>
+				</div>
+			</div>
+
+			<span id="wind-direction">-</span>
+		</div>
+
+	</section>
+
+	<section class="data">
+		<div class="weather-icon">
+			<p>-</p>
+		</div>
+		<div id="description">
+			<p>-</p>
+		</div>
+		<div class="weather-icon">
+			<p>-</p>
+		</div>
+	</section>
+
+	<footer>
+		<p>Made by
+			<a href="https://github.com/SamuelNewhouse" target="_blank">Samuel Newhouse</a>
+		</p>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous" defer></script>
+	<script src="scripts/script.js" defer></script>
 </body>
 
 </html>

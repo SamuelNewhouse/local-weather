@@ -1,46 +1,81 @@
-/*
-https://openweathermap.org/current#geo
+$(function () {  
+  var weatherData = null;
 
-api.openweathermap.org/data/2.5/weather?lat=???&lon=???&APPID=91d37ac558e79e36d4fbe8a39af5bee8
-*/
-var kTemp = 0.0;
-var isFaren = true;
+  navigator.geolocation.getCurrentPosition(fetchWeatherData);
 
-function setFaren() {
-  $(".tempH1").html(Math.round(kTemp * 9 / 5 - 459.67));
-  $(".unitH1").html("F");
-}
-function setCelc() {
-  $(".tempH1").html(Math.round(kTemp - 273.15));
-  $(".unitH1").html("C");
-}
+  function fetchWeatherData(position) {
+    var urlString = "https://fcc-weather-api.glitch.me/api/current" +
+      "?lat=" + position.coords.latitude +
+      "&lon=" + position.coords.longitude;
 
-$(document).ready(function () {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      $.getJSON(
-        "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" +
-        position.coords.latitude +
-        "&lon=" +
-        position.coords.longitude +
-        "139&APPID=91d37ac558e79e36d4fbe8a39af5bee8",
-        function (result) {
-          console.log(result);
-          $(".locH1").html(result.name);
-          kTemp = result.main.temp;
-          $(".tempH1").html(kTemp);
-          setFaren();
-          $(".wIcon").html("<img src='http://openweathermap.org/img/w/" + result.weather[0].icon + ".png'>");
-          $(".wDesc").html(result.weather[0].main);
-        });
+    $.get(urlString, saveWeatherData);
+    console.log(urlString);
+  }
+
+  function saveWeatherData(data) {
+    weatherData = data;
+    updateWeatherDisplay();
+  }
+
+  function toTitleCase(str) {
+    return str.replace(/(?:^|\s)\w/g, function (match) {
+      return match.toUpperCase();
     });
   }
 
-  $(".unitH1").on("click", function () {
-    if (isFaren)
-      setCelc();
+  function degreesToDirection(degrees) {
+    var directionArray = ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"];
+    var normalDirection = degrees % 360;
+    var compassSector = Math.round(normalDirection / 45);
+
+    return directionArray[compassSector];
+  }
+
+  function updateWeatherDisplay() {
+    var temperatureNumber = weatherData.main.temp;
+    var windNumber = weatherData.wind.speed;
+    var windDirection = degreesToDirection(weatherData.wind.deg);
+
+    var temperatureUnit = $("input[type=radio][name=temperature-unit]:checked").val();
+    var windUnit = $("input[type=radio][name=wind-unit]:checked").val();
+
+    if (temperatureUnit == "Fahrenheit") {
+      temperatureNumber = temperatureNumber * 1.8 + 32;
+      temperatureUnit = "F";
+    }
     else
-      setFaren();
-    isFaren = !isFaren;
+      temperatureUnit = "C";
+
+    switch (windUnit) {
+      case "kph":
+        windNumber *= 1.852;
+        break;
+      case "mph":
+        windNumber *= 1.151;
+        break;
+    }
+
+    temperatureNumber = Math.round(temperatureNumber);
+    windNumber = Math.round(windNumber);
+
+    $("#location").html(weatherData.name);
+
+    $("#temperature-number").html(temperatureNumber);
+    $("#temperature-unit").html(temperatureUnit);
+
+    $("#wind-number").html(windNumber);
+    $("#wind-unit").html(windUnit);
+    $("#wind-direction").html(windDirection);
+
+    $(".weather-icon").html('<img src="' + weatherData.weather[0].icon + '">');
+    $("#description > p").html(toTitleCase(weatherData.weather[0].description));
+
+    $(".message").css('display', 'none');
+    $(".data").css('display', 'block');
+  }
+
+  $("input[type=radio]").change(function () {
+    if (weatherData)
+      updateWeatherDisplay();
   });
 });
