@@ -1,42 +1,48 @@
 html {
-  font-size: 1.7rem;  
+  font-size: 1.7rem;
+  height: 100%;
+  background: linear-gradient(to bottom, #fff, #aaa);
 }
 
 body {
-  background-color: #fff;
+  margin: 0;
+  padding: 0;  
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-size: 1.3em;
+header {
+  background-color: #000;
 }
 
 header, section, footer {
-  margin: 0 auto;
-  max-width: 600px;
+  padding: 0;
+  margin: 0 auto;   
   text-align: center;
-}
-
-header {  
-  max-width: 100%;  
-  background: #000;
-  color: #fff;
-}
-
-header, footer {
-  padding: 32px 0;
-}
-
-section, footer {
-  height: 2.5em;
+  vertical-align: middle;
+  width: 100%;
+  min-height: 2.5em;
   line-height: 2.5em;
 }
 
-footer {  
-  margin-top: 1em;
-  font-size: 0.5em;
+h1 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding: 0;
+  margin: auto;
 }
 
-p, div {
+section {
+  color: #000;
+}
+
+footer {
+  color: #000;
+  margin-top: 1em;
+  font-size: 0.5em;  
+}
+
+p, span, div {
   margin: 0;
   padding: 0;
 }
@@ -45,10 +51,6 @@ section > div {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-}
-
-section:nth-of-type(1), section:nth-of-type(2) {
-  margin-top: 1.75em;  
 }
 
 .pointer {

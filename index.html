@@ -9,8 +9,6 @@
 	<meta name="description" content="This is my submission for the 'Show the Local Weather' project on www.freecodecamp.com.">
 	<meta name="author" content="Samuel Newhouse">
 	<title>Local Weather Viewer</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css"
-	 integrity="sha256-pz64SJ9vnWkyhtOo7mtiOekWuFo7YIGXrzXjElYzcWA=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 
@@ -21,14 +19,12 @@
 
 	<section class="message">
 		<div>
-			<p>Finding your location...</p>
+			<p id="message">Finding your location...</p>
 		</div>
 	</section>
 
 	<section class="data">
-		<div id="location">
-			<p>-</p>
-		</div>
+		<span id="location">-</span>
 	</section>
 
 	<section class="data">

@@ -1,37 +1,19 @@
-$(function () {
+$(function () {  
   var weatherData = null;
 
-  if (navigator.geolocation) {
-    let options = {
-      enableHighAccuracy: false,
-      timeout: 10000,
-      maximumAge: 300000
-    };
-
-    navigator.geolocation.getCurrentPosition(fetchWeatherData, navGeoError, options);
-  }
-  else {
-    console.log("navigator.geolocation not found");
-    return;
-  }
-
-  function navGeoError(error){
-
-  }
+  navigator.geolocation.getCurrentPosition(fetchWeatherData);
 
   function fetchWeatherData(position) {
     var urlString = "https://fcc-weather-api.glitch.me/api/current" +
       "?lat=" + position.coords.latitude +
       "&lon=" + position.coords.longitude;
 
-    console.log(urlString);
     $.get(urlString, saveWeatherData);
+    console.log(urlString);
   }
 
   function saveWeatherData(data) {
-    console.log(data);
-    if (data.coord)
-      weatherData = data;
+    weatherData = data;
     updateWeatherDisplay();
   }
 
@@ -49,13 +31,13 @@ $(function () {
     return directionArray[compassSector];
   }
 
-  function updateWeatherDisplay() {    
+  function updateWeatherDisplay() {
     var temperatureNumber = weatherData.main.temp;
     var windNumber = weatherData.wind.speed;
     var windDirection = degreesToDirection(weatherData.wind.deg);
 
     var temperatureUnit = $("input[type=radio][name=temperature-unit]:checked").val();
-    var windUnit = $("input[type=radio][name=wind-unit]:checked").val();    
+    var windUnit = $("input[type=radio][name=wind-unit]:checked").val();
 
     if (temperatureUnit == "Fahrenheit") {
       temperatureNumber = temperatureNumber * 1.8 + 32;
@@ -76,7 +58,7 @@ $(function () {
     temperatureNumber = Math.round(temperatureNumber);
     windNumber = Math.round(windNumber);
 
-    $("#location > p").html(weatherData.name);
+    $("#location").html(weatherData.name);
 
     $("#temperature-number").html(temperatureNumber);
     $("#temperature-unit").html(temperatureUnit);
