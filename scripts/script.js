@@ -1,4 +1,4 @@
-$(function () {  
+$(function () {
   var weatherData = null;
 
   navigator.geolocation.getCurrentPosition(fetchWeatherData);
@@ -9,7 +9,6 @@ $(function () {
       "&lon=" + position.coords.longitude;
 
     $.get(urlString, saveWeatherData);
-    console.log(urlString);
   }
 
   function saveWeatherData(data) {
