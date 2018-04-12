@@ -13,27 +13,27 @@
 </head>
 
 <body>
-	<header>
-		<h1>Local Weather Viewer</h1>
-	</header>
+	<section id="main">
 
-	<section class="message">
-		<div>
+		<header>
+			<h1>Local Weather Viewer</h1>
+		</header>
+
+		<section class="message">
 			<p id="message">Finding your location...</p>
-		</div>
-	</section>
+		</section>
 
-	<section class="data">
-		<span id="location">-</span>
-	</section>
+		<section class="data">
+			<span id="location"></span>
+		</section>
 
-	<section class="data">
+		<section class="data">
 
-		<div id="temperature">
-			<span id="temperature-number">-</span>
+			<span id="temperature-number"></span>
+
 			<div class="dropdown">
-				<span class="pointer" id="temperature-unit">-</span>
 
+				<span class="pointer" id="temperature-unit"></span>
 				<div class="dropdown-content">
 					<input type="radio" checked="checked" name="temperature-unit" value="Celsius" id="radio-celsius">
 					<label for="radio-celsius">Celsius</label>
@@ -41,16 +41,16 @@
 					<input type="radio" name="temperature-unit" value="Fahrenheit" id="radio-fahrenheit">
 					<label for="radio-fahrenheit">Fahrenheit</label>
 				</div>
-
 			</div>
-		</div>
 
-		<div id="wind">
-			<span id="wind-number">-</span>
+			<div class="seperator">
+			</div>
+
+			<span id="wind-number"></span>
 
 			<div class="dropdown">
-				<span class="pointer" id="wind-unit">-</span>
 
+				<span class="pointer" id="wind-unit"></span>
 				<div class="dropdown-content">
 					<input type="radio" checked="checked" name="wind-unit" value="knots" id="radio-knots">
 					<label for="radio-knots">knots</label>
@@ -63,21 +63,20 @@
 				</div>
 			</div>
 
-			<span id="wind-direction">-</span>
-		</div>
+			<span id="wind-direction"></span>
 
-	</section>
+		</section>
 
-	<section class="data">
-		<div class="weather-icon">
-			<p>-</p>
-		</div>
-		<div id="description">
-			<p>-</p>
-		</div>
-		<div class="weather-icon">
-			<p>-</p>
-		</div>
+		<section class="data">
+			<div class="weather-icon">
+			</div>
+			<div id="description">
+				<p></p>
+			</div>
+			<div class="weather-icon">
+			</div>
+		</section>
+
 	</section>
 
 	<footer>
@@ -85,7 +84,6 @@
 			<a href="https://github.com/SamuelNewhouse" target="_blank">Samuel Newhouse</a>
 		</p>
 	</footer>
-
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin="anonymous" defer></script>
 	<script src="scripts/script.js" defer></script>
