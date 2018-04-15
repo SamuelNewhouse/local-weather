@@ -9,49 +9,48 @@
 	<meta name="description" content="This is my submission for the 'Show the Local Weather' project on www.freecodecamp.com.">
 	<meta name="author" content="Samuel Newhouse">
 	<title>Local Weather Viewer</title>
+	<link href="https://fonts.googleapis.com/css?family=Acme|Inconsolata" rel="stylesheet">
 	<link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 
 <body>
-	<section id="main">
+	<div id="main">
 
 		<header>
 			<h1>Local Weather Viewer</h1>
 		</header>
 
 		<section class="message">
-			<p id="message">Finding your location...</p>
+			<p>Finding your location...</p>
 		</section>
 
-		<section class="data">
-			<span id="location"></span>
+		<section class="data" id="location">
 		</section>
 
-		<section class="data">
-
+		<section class="data big">
 			<span id="temperature-number"></span>
 
-			<div class="dropdown">
+			<span class="dropdown">
 
 				<span class="pointer" id="temperature-unit"></span>
-				<div class="dropdown-content">
+				<span class="dropdown-content">
 					<input type="radio" checked="checked" name="temperature-unit" value="Celsius" id="radio-celsius">
 					<label for="radio-celsius">Celsius</label>
 
 					<input type="radio" name="temperature-unit" value="Fahrenheit" id="radio-fahrenheit">
 					<label for="radio-fahrenheit">Fahrenheit</label>
-				</div>
-			</div>
+				</span>
+			</span>
+		</section>
 
-			<div class="seperator">
-			</div>
-
+		<section class="data big" id="wind">
+			<span id="wind-direction"></span>
 			<span id="wind-number"></span>
 
-			<div class="dropdown">
+			<span class="dropdown">
 
 				<span class="pointer" id="wind-unit"></span>
-				<div class="dropdown-content">
+				<span class="dropdown-content">
 					<input type="radio" checked="checked" name="wind-unit" value="knots" id="radio-knots">
 					<label for="radio-knots">knots</label>
 
@@ -60,30 +59,25 @@
 
 					<input type="radio" name="wind-unit" value="mph" id="radio-mph">
 					<label for="radio-mph">mph</label>
-				</div>
-			</div>
-
-			<span id="wind-direction"></span>
+				</span>
+			</span>
 
 		</section>
 
 		<section class="data">
-			<div class="weather-icon">
-			</div>
-			<div id="description">
-				<p></p>
-			</div>
-			<div class="weather-icon">
-			</div>
+			<span id="description">
+			</span>
+			<span class="weather-icon">
+			</span>
 		</section>
 
-	</section>
-
-	<footer>
-		<p>Made by
+		<footer>
+			Made by
 			<a href="https://github.com/SamuelNewhouse" target="_blank">Samuel Newhouse</a>
-		</p>
-	</footer>
+		</footer>
+	</div>
+
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin="anonymous" defer></script>
 	<script src="scripts/script.js" defer></script>
